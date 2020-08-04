@@ -6,6 +6,8 @@ pipeline {
                 echo 'Running build automation'
                 sh './gradlew build --no-daemon'
                 sh('ls')
+                sh('printenv')
+                sh('echo $GRADLE_USER_HOME')
                 input('')
                 archiveArtifacts artifacts: 'dist/trainSchedule.zip'
             }
